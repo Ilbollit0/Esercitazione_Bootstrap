@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>EpiShop — E-commerce</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<!-- NAVBAR: hamburger sotto md (768px) -->
@@ -18,6 +19,7 @@
 						<a class="nav-link" href="#">Offerte</a>
 						<a class="nav-link" href="#">Contatti</a>
 					</div>
+					<button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema scuro</button>
 				</div>
 			</div>
 		</nav>
@@ -60,10 +62,10 @@
 					<h2 class="fs-3 fw-bold mb-4 text-center text-md-start">Prodotti in evidenza <span class="badge text-bg-danger fs-6 align-middle">-30%</span></h2>
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
 						<article class="col">
-							<div class="card h-100 shadow-sm">
+							<div class="card h-100">
 								<img src="https://placehold.co/300x180" class="card-img-top" alt="Sneaker Run" />
 								<div class="card-body d-flex flex-column">
-									<h3 class="fs-5">Sneaker Run</h3>
+									<h3 class="card-title fs-5">Sneaker Run</h3>
 									<p class="text-body-secondary">Scarpa leggera per la corsa, suola in gomma traspirante.</p>
 									<p class="fs-5 fw-bold">€ 89,00</p>
 									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-sneaker">Dettagli</button>
@@ -71,10 +73,10 @@
 							</div>
 						</article>
 						<article class="col">
-							<div class="card h-100 shadow-sm">
+							<div class="card h-100">
 								<img src="https://placehold.co/300x180" class="card-img-top" alt="T-shirt basic" />
 								<div class="card-body d-flex flex-column">
-									<h3 class="fs-5">T-shirt basic</h3>
+									<h3 class="card-title fs-5">T-shirt basic</h3>
 									<p class="text-body-secondary">Cotone biologico, taglio regolare, disponibile in 5 colori.</p>
 									<p class="fs-5 fw-bold">€ 19,00</p>
 									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-tshirt">Dettagli</button>
@@ -82,10 +84,10 @@
 							</div>
 						</article>
 						<article class="col">
-							<div class="card h-100 shadow-sm">
+							<div class="card h-100">
 								<img src="https://placehold.co/300x180" class="card-img-top" alt="Borsa city" />
 								<div class="card-body d-flex flex-column">
-									<h3 class="fs-5">Borsa city</h3>
+									<h3 class="card-title fs-5">Borsa city</h3>
 									<p class="text-body-secondary">Tessuto resistente, tasca interna, cinghia regolabile.</p>
 									<p class="fs-5 fw-bold">€ 49,00</p>
 									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-borsa">Dettagli</button>
@@ -161,5 +163,6 @@
 
 		<!-- JS di Bootstrap: serve per navbar, carousel, accordion e modal -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
 	</body>
 </html>
