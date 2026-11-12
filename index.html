@@ -1,168 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EpiShop — E-commerce</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<!-- NAVBAR: hamburger sotto md (768px) -->
-		<nav class="navbar navbar-expand-md bg-primary" data-bs-theme="dark">
-			<div class="container">
-				<a class="navbar-brand fw-bold" href="#">EpiShop</a>
-				<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Apri il menu"><span class="navbar-toggler-icon"></span></button>
-				<div class="collapse navbar-collapse" id="menu">
-					<div class="navbar-nav ms-auto">
-						<a class="nav-link" href="#prodotti">Prodotti</a>
-						<a class="nav-link" href="#">Offerte</a>
-						<a class="nav-link" href="#">Contatti</a>
-					</div>
-					<button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema scuro</button>
-				</div>
-			</div>
-		</nav>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EpiShop — E-commerce</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
-		<!-- CAROUSEL: 3 slide di testo, scorrimento automatico -->
-		<section id="hero" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner text-white text-center">
-				<div class="carousel-item active bg-primary p-5">
-					<h2 class="fs-1 fw-bold">Saldi di primavera</h2>
-					<p class="fs-5 m-0">Fino al 50% di sconto sui prodotti in evidenza</p>
-				</div>
-				<div class="carousel-item bg-dark p-5">
-					<h2 class="fs-1 fw-bold">Spedizione gratis</h2>
-					<p class="fs-5 m-0">Sopra i 50 € su tutto il sito</p>
-				</div>
-				<div class="carousel-item bg-success p-5">
-					<h2 class="fs-1 fw-bold">Nuovi arrivi</h2>
-					<p class="fs-5 m-0">Scopri gli arrivi della settimana</p>
-				</div>
-			</div>
-			<button class="carousel-control-prev" data-bs-target="#hero" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Precedente</span></button>
-			<button class="carousel-control-next" data-bs-target="#hero" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Successiva</span></button>
-		</section>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+      <div class="container">
 
-		<main class="container my-5">
-			<div class="row g-4">
-				<!-- SIDEBAR: visibile da lg (992px) -->
-				<aside class="col-lg-3 d-none d-lg-block">
-					<div class="bg-light p-3 rounded border">
-						<h3 class="fs-5 fw-bold mb-3">Categorie</h3>
-						<p class="mb-2">Scarpe</p>
-						<p class="mb-2">T-shirt</p>
-						<p class="mb-2">Borse</p>
-						<p class="mb-2">Accessori</p>
-					</div>
-				</aside>
+        <a class="navbar-brand fw-bold" href="#">EpiShop</a>
 
-				<!-- PRODOTTI: 1 / 2 da sm / 3 da xl -->
-				<section id="prodotti" class="col-lg-9">
-					<h2 class="fs-3 fw-bold mb-4 text-center text-md-start">Prodotti in evidenza <span class="badge text-bg-danger fs-6 align-middle">-30%</span></h2>
-					<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
-						<article class="col">
-							<div class="card h-100">
-								<img src="https://placehold.co/300x180" class="card-img-top" alt="Sneaker Run" />
-								<div class="card-body d-flex flex-column">
-									<h3 class="card-title fs-5">Sneaker Run</h3>
-									<p class="text-body-secondary">Scarpa leggera per la corsa, suola in gomma traspirante.</p>
-									<p class="fs-5 fw-bold">€ 89,00</p>
-									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-sneaker">Dettagli</button>
-								</div>
-							</div>
-						</article>
-						<article class="col">
-							<div class="card h-100">
-								<img src="https://placehold.co/300x180" class="card-img-top" alt="T-shirt basic" />
-								<div class="card-body d-flex flex-column">
-									<h3 class="card-title fs-5">T-shirt basic</h3>
-									<p class="text-body-secondary">Cotone biologico, taglio regolare, disponibile in 5 colori.</p>
-									<p class="fs-5 fw-bold">€ 19,00</p>
-									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-tshirt">Dettagli</button>
-								</div>
-							</div>
-						</article>
-						<article class="col">
-							<div class="card h-100">
-								<img src="https://placehold.co/300x180" class="card-img-top" alt="Borsa city" />
-								<div class="card-body d-flex flex-column">
-									<h3 class="card-title fs-5">Borsa city</h3>
-									<p class="text-body-secondary">Tessuto resistente, tasca interna, cinghia regolabile.</p>
-									<p class="fs-5 fw-bold">€ 49,00</p>
-									<button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-borsa">Dettagli</button>
-								</div>
-							</div>
-						</article>
-					</div>
-				</section>
-			</div>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false"
+                aria-label="Apri menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-			<!-- FAQ: accordion, una risposta aperta alla volta -->
-			<h2 class="fs-3 fw-bold text-center mt-5 mb-4">Domande frequenti</h2>
-			<div class="accordion" id="faq">
-				<div class="accordion-item">
-					<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1">Quanto costa la spedizione?</button></h3>
-					<div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">È gratuita per ordini sopra i 50 €.</div></div>
-				</div>
-				<div class="accordion-item">
-					<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2">Posso restituire un prodotto?</button></h3>
-					<div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sì, hai 30 giorni dalla consegna per il reso.</div></div>
-				</div>
-				<div class="accordion-item">
-					<h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3">Quali pagamenti accettate?</button></h3>
-					<div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Carta di credito, PayPal e bonifico.</div></div>
-				</div>
-			</div>
-		</main>
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#prodotti">Prodotti</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Offerte</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
+          </ul>
+          <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">
+            Tema scuro
+          </button>
+        </div>
 
-		<footer class="bg-dark text-white text-center py-4">
-			<p class="m-0">© 2026 EpiShop — tutti i diritti riservati</p>
-		</footer>
+      </div>
+    </nav>
 
-		<!-- MODAL "Scheda prodotto": uno per prodotto -->
-		<div class="modal fade" id="modal-sneaker" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header"><h2 class="modal-title fs-5">Sneaker Run</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button></div>
-					<div class="modal-body">
-						<img src="https://placehold.co/600x300" class="img-fluid rounded mb-3" alt="Sneaker Run" />
-						<p>Scarpa leggera per la corsa, suola in gomma traspirante. Disponibile dal 36 al 46.</p>
-						<p class="fs-5 fw-bold m-0">€ 89,00</p>
-					</div>
-					<div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button><button class="btn btn-success">Aggiungi al carrello</button></div>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="modal-tshirt" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header"><h2 class="modal-title fs-5">T-shirt basic</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button></div>
-					<div class="modal-body">
-						<img src="https://placehold.co/600x300" class="img-fluid rounded mb-3" alt="T-shirt basic" />
-						<p>Cotone biologico, taglio regolare. Disponibile in 5 colori, taglie XS-XXL.</p>
-						<p class="fs-5 fw-bold m-0">€ 19,00</p>
-					</div>
-					<div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button><button class="btn btn-success">Aggiungi al carrello</button></div>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="modal-borsa" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header"><h2 class="modal-title fs-5">Borsa city</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button></div>
-					<div class="modal-body">
-						<img src="https://placehold.co/600x300" class="img-fluid rounded mb-3" alt="Borsa city" />
-						<p>Tessuto resistente, tasca interna con zip, cinghia regolabile.</p>
-						<p class="fs-5 fw-bold m-0">€ 49,00</p>
-					</div>
-					<div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button><button class="btn btn-success">Aggiungi al carrello</button></div>
-				</div>
-			</div>
-		</div>
+    <div id="hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner">
 
-		<!-- JS di Bootstrap: serve per navbar, carousel, accordion e modal -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
-	</body>
+        <div class="carousel-item active">
+          <div class="bg-primary text-white text-center py-5">
+            <div class="container">
+              <h2 class="fs-1 fw-bold mb-2">Saldi di primavera</h2>
+              <p class="fs-5 m-0">Fino al 50% di sconto sui prodotti in evidenza</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="bg-success text-white text-center py-5">
+            <div class="container">
+              <h2 class="fs-1 fw-bold mb-2">Nuova collezione</h2>
+              <p class="fs-5 m-0">Scopri gli arrivi della settimana</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="bg-dark text-white text-center py-5">
+            <div class="container">
+              <h2 class="fs-1 fw-bold mb-2">Spedizione gratis</h2>
+              <p class="fs-5 m-0">Sopra i 50 € su tutto il sito</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <main id="prodotti" class="container my-5">
+      <div class="row">
+
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="bg-light p-3 rounded border">
+            <h3 class="fs-5 fw-bold mb-3">Categorie</h3>
+            <p class="m-0 mb-2">Scarpe</p>
+            <p class="m-0 mb-2">Abbigliamento</p>
+            <p class="m-0 mb-2">Accessori</p>
+          </div>
+        </aside>
+
+        <section class="col-12 col-lg-9">
+          <h2 class="fs-3 fw-bold mb-4 text-center text-md-start">
+            Prodotti in evidenza
+            <span class="badge bg-danger fs-6">-30%</span>
+          </h2>
+
+          <!-- Filtri: un solo listener sul contenitore (event delegation) -->
+          <div id="filtri" class="mb-4">
+            <button type="button" class="btn btn-outline-primary me-2 mb-2 active" data-categoria="tutti">Tutti</button>
+            <button type="button" class="btn btn-outline-primary me-2 mb-2" data-categoria="scarpe">Scarpe</button>
+            <button type="button" class="btn btn-outline-primary me-2 mb-2" data-categoria="abbigliamento">Abbigliamento</button>
+            <button type="button" class="btn btn-outline-primary me-2 mb-2" data-categoria="accessori">Accessori</button>
+          </div>
+
+          <!-- Extra 16: contatore -->
+          <p class="text-muted mb-2">Mostrati: <span id="contatore">6</span> su 6</p>
+
+          <div id="contenitore-prodotti" class="row"><!-- popolato da JS --></div>
+
+          <!-- Extra 17: totale con reduce -->
+          <p class="fw-bold mt-2 mb-0">Totale catalogo: € <span id="totale"></span></p>
+        </section>
+
+      </div>
+    </main>
+
+    <div class="modal fade" id="prodotto-1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">Sneaker Run</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+          </div>
+
+          <div class="modal-body">
+            <img src="https://placehold.co/600x300" class="img-fluid mb-3" alt="">
+            <p>Scarpa leggera per la corsa, suola in gomma traspirante. Disponibile dal 36 al 46.</p>
+            <p class="fw-bold fs-4 m-0">€ 89,00</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="button" class="btn btn-success">Aggiungi al carrello</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container text-center">
+        <p class="m-0">© 2026 EpiShop — tutti i diritti riservati</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

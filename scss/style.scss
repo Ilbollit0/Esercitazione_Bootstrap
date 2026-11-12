@@ -1,0 +1,156 @@
+// EpiShop — Settimana VI, Giorno IV
+// Tema verde, varianti card per categoria, tema chiaro/scuro con SASS.
+
+@use 'sass:color';
+
+
+// === Variabili ===
+
+$brand-primary: hsl(150, 60%, 30%); // verde
+// darken() è deprecato in Dart Sass: color.adjust con $lightness negativa è l'equivalente
+$brand-primary-hover: color.adjust($brand-primary, $lightness: -10%);
+$brand-success: #198754;
+$brand-danger:  #dc3545;
+
+$radius-base:   8px;
+$shadow-card:   0 2px 6px rgba(0, 0, 0, 0.08);
+$shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+
+// === Override colori Bootstrap ===
+
+// .bg-primary di Bootstrap ha !important: serve anche qui (navbar e prima slide)
+.bg-primary {
+  background-color: $brand-primary !important;
+}
+
+// I bottoni Bootstrap leggono i colori da variabili CSS --bs-btn-*:
+// cambiandole valgono per stato normale, hover e active senza !important
+.btn-primary {
+  --bs-btn-bg: #{$brand-primary};
+  --bs-btn-border-color: #{$brand-primary};
+  --bs-btn-hover-bg: #{$brand-primary-hover};
+  --bs-btn-hover-border-color: #{$brand-primary-hover};
+  --bs-btn-active-bg: #{$brand-primary-hover};
+  --bs-btn-active-border-color: #{$brand-primary-hover};
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #{$brand-primary};
+  --bs-btn-border-color: #{$brand-primary};
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #{$brand-primary};
+  --bs-btn-hover-border-color: #{$brand-primary};
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #{$brand-primary};
+  --bs-btn-active-border-color: #{$brand-primary};
+}
+
+
+// === Mixin: tema (parametri = colori del tema) ===
+
+@mixin tema($bg, $testo, $card-bg, $bordo, $muted) {
+  background-color: $bg;
+  color: $testo;
+  --bs-secondary-color: #{$muted}; // usato da .text-muted (contatore)
+
+  .card {
+    background-color: $card-bg;
+    color: $testo; // Bootstrap fissa il colore della card: senza, il prezzo resta scuro in tema scuro
+    // variabile Bootstrap invece di border-color: così il bordo colorato delle categorie non viene coperto
+    --bs-card-border-color: #{$bordo};
+
+    .card-text {
+      color: $muted;
+    }
+  }
+
+  // !important perché .bg-light e .border di Bootstrap hanno !important
+  aside .bg-light {
+    background-color: $card-bg !important;
+    border-color: $bordo !important;
+    color: $testo;
+  }
+
+  .modal-content {
+    background-color: $card-bg;
+    color: $testo;
+  }
+}
+
+
+// === Tema chiaro (default) ===
+
+body {
+  @include tema(
+    $bg:      #fafafa,
+    $testo:   #1a1a1a,
+    $card-bg: #ffffff,
+    $bordo:   #e0e0e0,
+    $muted:   #6c757d
+  );
+
+  // proprietà comuni a entrambi i temi
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+
+// === Tema scuro ===
+
+body.dark {
+  @include tema(
+    $bg:      #1a1a1a,
+    $testo:   #f0f0f0,
+    $card-bg: #2a2a2a,
+    $bordo:   #444444,
+    $muted:   #b0b0b0
+  );
+}
+
+
+// === Stili custom — nesting ===
+
+.card {
+  border-radius: $radius-base;
+  box-shadow: $shadow-card;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    transform: translateY(-3px);
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
+}
+
+
+// === Mixin: varianti card per categoria ===
+
+@mixin card-prodotto($accent) {
+  border-top: 4px solid $accent;
+
+  .card-title {
+    color: $accent;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba($accent, 0.3);
+  }
+}
+
+.card.scarpe        { @include card-prodotto(hsl(220, 60%, 40%)); }
+.card.abbigliamento { @include card-prodotto(hsl(0, 70%, 50%)); }
+.card.accessori     { @include card-prodotto(hsl(45, 90%, 50%)); }
+
+
+// === Bottone toggle: stile base ===
+
+#toggle-tema {
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
