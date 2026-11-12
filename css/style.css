@@ -1,0 +1,122 @@
+.bg-primary {
+  background-color: hsl(150, 60%, 30%) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: hsl(150, 60%, 30%);
+  --bs-btn-border-color: hsl(150, 60%, 30%);
+  --bs-btn-hover-bg: hsl(150, 60%, 20%);
+  --bs-btn-hover-border-color: hsl(150, 60%, 20%);
+  --bs-btn-active-bg: hsl(150, 60%, 20%);
+  --bs-btn-active-border-color: hsl(150, 60%, 20%);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: hsl(150, 60%, 30%);
+  --bs-btn-border-color: hsl(150, 60%, 30%);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: hsl(150, 60%, 30%);
+  --bs-btn-hover-border-color: hsl(150, 60%, 30%);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: hsl(150, 60%, 30%);
+  --bs-btn-active-border-color: hsl(150, 60%, 30%);
+}
+
+body {
+  background-color: #fafafa;
+  color: #1a1a1a;
+  --bs-secondary-color: #6c757d;
+}
+body .card {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  --bs-card-border-color: #e0e0e0;
+}
+body .card .card-text {
+  color: #6c757d;
+}
+body aside .bg-light {
+  background-color: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #1a1a1a;
+}
+body .modal-content {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+body {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body.dark {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  --bs-secondary-color: #b0b0b0;
+}
+body.dark .card {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  --bs-card-border-color: #444444;
+}
+body.dark .card .card-text {
+  color: #b0b0b0;
+}
+body.dark aside .bg-light {
+  background-color: #2a2a2a !important;
+  border-color: #444444 !important;
+  color: #f0f0f0;
+}
+body.dark .modal-content {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+.card .card-title {
+  font-weight: bold;
+}
+
+.card.scarpe {
+  border-top: 4px solid hsl(220, 60%, 40%);
+}
+.card.scarpe .card-title {
+  color: hsl(220, 60%, 40%);
+}
+.card.scarpe:hover {
+  box-shadow: 0 6px 18px rgba(16%, 32%, 64%, 0.3);
+}
+
+.card.abbigliamento {
+  border-top: 4px solid hsl(0, 70%, 50%);
+}
+.card.abbigliamento .card-title {
+  color: hsl(0, 70%, 50%);
+}
+.card.abbigliamento:hover {
+  box-shadow: 0 6px 18px rgba(85%, 15%, 15%, 0.3);
+}
+
+.card.accessori {
+  border-top: 4px solid hsl(45, 90%, 50%);
+}
+.card.accessori .card-title {
+  color: hsl(45, 90%, 50%);
+}
+.card.accessori:hover {
+  box-shadow: 0 6px 18px rgba(95%, 72.5%, 5%, 0.3);
+}
+
+#toggle-tema {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+#toggle-tema:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
